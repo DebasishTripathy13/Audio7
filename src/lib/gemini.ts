@@ -4,7 +4,7 @@ const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 export async function generateSummaryFromAudio(audioBlob: Blob) {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     // Convert blob to base64
     const buffer = await audioBlob.arrayBuffer();
@@ -20,90 +20,24 @@ export async function generateSummaryFromAudio(audioBlob: Blob) {
         }
       },
       { 
-        text: `## Objective
-Generate comprehensive academic lecture notes using the following structured format:
+        text: `Please analyze the provided audio in **extreme detail** and generate a **comprehensive, in-depth, and highly structured document** in markdown format. The output should be as long and detailed as possible, covering every aspect of the audio content. Include the following sections:
 
-## Prompt Instructions:
-1. Carefully analyze the lecture/audio content
-2. Create a detailed, scholarly document with the following sections:
+1. **Summary**: Provide a detailed overview of the audio, capturing the main ideas, context, purpose, and tone. Go beyond surface-level insights and explore nuances, underlying themes, and implications.
+2. **Key Points**: Break the content into **exhaustive bullet points**, covering every significant idea, argument, or insight. Include sub-points for additional depth and context.
+3. **Action Items**: Extract **all actionable tasks, recommendations, or next steps** mentioned in the audio. Provide detailed explanations for each action item, including why it matters and how to implement it.
+4. **Key Terms & Concepts**: List and define **every important term, jargon, or concept** discussed. Provide detailed explanations, examples, and context for each term to ensure full understanding.
+5. **References & Resources**: Include **all references, books, studies, tools, or external resources** mentioned in the audio. Add additional resources for further learning, including links, summaries, and why they are relevant.
+6. **Highlights**: Create a "Quick Highlights" section at the top, summarizing the **most critical points** in 5-7 bullet points for easy scanning. Ensure these highlights are detailed and capture the essence of the audio.
+7. **Quotes & Verbatim Excerpts**: Include **direct quotes or verbatim excerpts** from the audio that are particularly impactful, insightful, or noteworthy. Provide context for each quote.
+8. **Analysis & Insights**: Add a section for **deeper analysis and insights**. Explore connections between ideas, potential implications, and any unanswered questions or areas for further exploration.
+9. **Timestamps (if applicable)**: If the audio includes timestamps or references to specific sections, include them in the notes for easy navigation.
 
-### 1. Comprehensive Summary
-- Provide a comprehensive narrative overview
-- Capture the core thesis and main arguments
-- Contextualize the lecture's academic significance
+**Formatting Guidelines**:
+- Use markdown for headings, bullet points, bold text, and code blocks (if applicable).
+- Organize the content hierarchically, with clear sections and sub-sections.
+- Use tables, lists, and other formatting tools to enhance readability.
 
-### 2. Key Points
-- Identify and elaborate on 5-7 primary conceptual points
-- Include:
-  - Precise definitions
-  - Theoretical foundations
-  - Critical analytical insights
-
-### 3. Detailed Content Breakdown
-- Segment the lecture into 2-3 major subsections
-- For each subsection:
-  - Provide in-depth analysis
-  - Include supporting research
-  - Highlight critical arguments
-
-### 4. Action Items
-- Academic research recommendations
-- Potential research questions
-- Practical application strategies
-
-### 5. Terminology and References
-- Compile a comprehensive glossary
-- List key scholarly references
-- Create a reference table with:
-  - Term
-  - Definition
-  - Source
-  - Academic significance
-
-### 6. Critical Analysis Section
-- Synthesize most transformative insights
-- Discuss broader intellectual implications
-- Identify potential research directions
-
-### 7. External Resources
-- Recommend additional reading materials
-- Include academic database references
-- Provide links to supplementary sources
-
-### 8. Formatting Guidelines
-- Use markdown formatting
-- Maintain academic writing style
-- Ensure clarity and scholarly precision
-
-### 9. Metadata
-- Indicate lecture context
-- Note complexity level
-- Tag interdisciplinary connections
-
-## Submission Requirements:
-- Minimum length: 1000 words
-- Maximum length: 2500 words
-- Use APA or specified citation style
-- Demonstrate critical thinking
-- Maintain academic rigor
-
-## Special Instructions:
-- Focus on intellectual depth
-- Balance descriptive and analytical approaches
-- Highlight innovative concepts
-- Maintain objective scholarly tone
-
-### Evaluation Criteria:
-- Comprehensiveness
-- Analytical depth
-- Scholarly presentation
-- Critical insight
-- Clarity of exposition
-
----
-
-### Template Completion Prompt:
-"Based on the provided lecture/audio content, generate comprehensive academic notes following the above structured guidelines. Ensure thorough coverage, scholarly analysis, and intellectual depth."`
+**Goal**: The output should be a **thorough, exhaustive, and highly detailed document** that captures every aspect of the audio. It should serve as a **standalone resource** for understanding the content in depth, with no detail left unexplored.`
       }
     ]);
 
