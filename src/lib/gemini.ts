@@ -20,14 +20,90 @@ export async function generateSummaryFromAudio(audioBlob: Blob) {
         }
       },
       { 
-        text: `Please provide a detailed summary of this audio in markdown format make it as long as possible.these are lecturs so you should make lecture notes
-        Include the following sections:
-        1. Summary
-        2. Key Points
-        3. Action Items
-        4. Notable References or Terms
-        5. References for future studies or that might help in understanding alongside links to sources
-        6.Create an important section where the most important poins or refferences are mentioned` 
+        text: `## Objective
+Generate comprehensive academic lecture notes using the following structured format:
+
+## Prompt Instructions:
+1. Carefully analyze the lecture/audio content
+2. Create a detailed, scholarly document with the following sections:
+
+### 1. Comprehensive Summary
+- Provide a comprehensive narrative overview
+- Capture the core thesis and main arguments
+- Contextualize the lecture's academic significance
+
+### 2. Key Points
+- Identify and elaborate on 5-7 primary conceptual points
+- Include:
+  - Precise definitions
+  - Theoretical foundations
+  - Critical analytical insights
+
+### 3. Detailed Content Breakdown
+- Segment the lecture into 2-3 major subsections
+- For each subsection:
+  - Provide in-depth analysis
+  - Include supporting research
+  - Highlight critical arguments
+
+### 4. Action Items
+- Academic research recommendations
+- Potential research questions
+- Practical application strategies
+
+### 5. Terminology and References
+- Compile a comprehensive glossary
+- List key scholarly references
+- Create a reference table with:
+  - Term
+  - Definition
+  - Source
+  - Academic significance
+
+### 6. Critical Analysis Section
+- Synthesize most transformative insights
+- Discuss broader intellectual implications
+- Identify potential research directions
+
+### 7. External Resources
+- Recommend additional reading materials
+- Include academic database references
+- Provide links to supplementary sources
+
+### 8. Formatting Guidelines
+- Use markdown formatting
+- Maintain academic writing style
+- Ensure clarity and scholarly precision
+
+### 9. Metadata
+- Indicate lecture context
+- Note complexity level
+- Tag interdisciplinary connections
+
+## Submission Requirements:
+- Minimum length: 1000 words
+- Maximum length: 2500 words
+- Use APA or specified citation style
+- Demonstrate critical thinking
+- Maintain academic rigor
+
+## Special Instructions:
+- Focus on intellectual depth
+- Balance descriptive and analytical approaches
+- Highlight innovative concepts
+- Maintain objective scholarly tone
+
+### Evaluation Criteria:
+- Comprehensiveness
+- Analytical depth
+- Scholarly presentation
+- Critical insight
+- Clarity of exposition
+
+---
+
+### Template Completion Prompt:
+"Based on the provided lecture/audio content, generate comprehensive academic notes following the above structured guidelines. Ensure thorough coverage, scholarly analysis, and intellectual depth."`
       }
     ]);
 
