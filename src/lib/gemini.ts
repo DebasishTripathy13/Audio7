@@ -4,7 +4,7 @@ const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 export async function generateSummaryFromAudio(audioBlob: Blob) {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
     
     // Convert blob to base64
     const buffer = await audioBlob.arrayBuffer();
@@ -20,7 +20,7 @@ export async function generateSummaryFromAudio(audioBlob: Blob) {
         }
       },
       { 
-        text: `Please provide a detailed summary of this audio in markdown format make it as long as possible. 
+        text: `Please provide a detailed summary of this audio in markdown format make it as long as possible.these are lecturs so you should make lecture notes
         Include the following sections:
         1. Summary
         2. Key Points
